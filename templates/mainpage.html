@@ -5,103 +5,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventsia</title>
+    <title>Main Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Baloo Bhai' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
     <style>
-        /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Work Sans', sans-serif;
-            background-color: lightblue;
+            background-image: url('https://tse4.mm.bing.net/th/id/OIP.yCwNdiMRMuuwmJOB7dS4xwHaKs?rs=1&pid=ImgDetMain');
             color: #333;
             line-height: 1.6;
+            background-repeat: no-repeat;
+
+            background-size:contain;
         }
+        .animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px 5rem;
 
-        :root {}
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid lightblue;
+  background-color:beige;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #000;
+  box-shadow: 0 0 0 2px beige;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
 
-        /* Navigation bar */
-        #navbar {
-            display: flex;
-            align-items: center;
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color:lightblue;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
 
-            top: 0px;
-            width: 100%;
-            z-index: 1000;
-        }
+.animated-button span:first-child {
+  position: relative;
+  z-index: 1;
+}
 
-        #navbar::before {
-            content: "";
-            background-color: #0084FF;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            z-index: -1;
-            opacity: 0.4;
-        }
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #000000;
+}
 
-        #logo {
-            margin: 10px 15px;
+.animated-button:active {
+  scale: 0.95;
+}
 
-        }
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
 
-        #logo img {
-            /* margin: 3px 5px; */
-            height: 45px;
-        }
-
-        #navbar ul {
-            display: flex;
-        }
-
-        #navbar ul li {
-            list-style: none;
-            font-size: 20px;
-        }
-
-        #navbar ul li a {
-            color: white;
-            display: block;
-            /*block because we have to give padding*/
-            padding: 3px 22px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-family: 'Work Sans';
-            font-size: 22px;
-            font-style: normal;
-        }
-
-        #navbar ul li a:hover {
-            color: black;
-            background-color: white;
-        }
 
 
         /* Contact Section */
         #contact {
-            background-color: #fff;
+
             padding: 50px 0;
             text-align: center;
         }
 
-        #contact h1 {
-            font-family: 'Hubballi', cursive;
-            font-size: 3rem;
-            margin-bottom: 30px;
-            color: #333;
-        }
 
         #contact-box {
             width: 80%;
@@ -128,7 +106,6 @@
         .form-group textarea {
             width: 100%;
             padding: 10px;
-            color: #666;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
@@ -147,40 +124,24 @@
         .form-group textarea {
             resize: vertical;
         }
-
-        button[type="submit"] {
-            display: block;
-            width: 50%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0084FF;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #005bb5;
-        }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="logo">
-            <img src="logo.jpg" alt="MyCoDeX.com">
-        </div>
-        <ul>
-            <li class="item"><a href="homepage.html">Home</a></li>
-            <li class="item"><a href="#Dashboard">Dashboard</a></li>
-            <li class="item"><a href="contact.html">Contact Us</a></li>
-            <li class="item"><a href="about_us.html">About Us</a></li>
-        </ul>
-    </nav>
+  <button style="margin-left:12rem;" class="animated-button">
+    <span><a href="homepage.html">Home</a></span>
+    <span></span>
+  </button>
+  <button class="animated-button">
+    <span><a href="about_us.html">About Us</a></span>
+    <span></span>
+  </button>
+  <button class="animated-button">
+    <span><a href="contact.html">Contact Us</a></span>
+    <span></span>
+  </button>
+
 
     <section id="contact">
         <h1>We are bringing health and wellness home</h1>
@@ -257,12 +218,55 @@
                         placeholder="Enter calories per gram">
                 </div>
 
-                <button type="submit">Predict</button>
+                <div class="login-with form" style="margin-bottom:3rem ;flex-direction: row; margin-top:3rem;margin-left: 6rem; width:20rem;">
+                  <button class="button-confirm" style="width: 15rem;">Submit</button>
+              </div>
 
 
             </form>
         </div>
     </section>
+
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var rel = elem.rel;
+                    if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                        var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                        elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                    }
+                    parent.appendChild(elem);
+                }
+            }
+            var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+            var address = protocol + window.location.host + window.location.pathname + '/ws';
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+                if (msg.data == 'reload') window.location.reload();
+                else if (msg.data == 'refreshcss') refreshCSS();
+            };
+            if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                console.log('Live reload enabled.');
+                sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+            }
+        })();
+    }
+    else {
+        console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+    // ]]>
+</script>
+
+
 
 </body>
 

@@ -5,7 +5,7 @@
     --bg-color: beige;
     --main-color: black;
     padding: 20px  0px;
-    margin: 7rem 23rem;
+    margin: 3rem 5rem;
     background: lightblue;
     display: flex;
     width:25rem;
@@ -22,7 +22,7 @@
     color: var(--font-color);
     font-weight: 900;
     font-size: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
   }
 
   .title span {
